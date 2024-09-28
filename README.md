@@ -363,7 +363,7 @@ $ git remote remove origin
 Git allows you to combine the changes from different branches using various types of merges. Before merging, ensure you are on the branch you want to merge into.
 <br>
 
-## I.Fast-Forward Merge
+## I Fast-Forward Merge
 If there are no diverging changes between branches, Git will simply move the branch pointer forward.
 <br>
 
@@ -406,7 +406,7 @@ git merge --on-ff <branch-name>
 </p>
 
 
-## II.3-Way Merge
+## II 3-Way Merge
 If the branches have diverged, Git performs a 3-way merge, creating a merge commit.
 <br>
  
@@ -426,7 +426,7 @@ $ git merge feature-branch
 ```
 Git will create a new merge commit combining changes from both branches.
 
-## III.Squash Merge
+## III Squash Merge
 Squashing combines all commits from the feature branch into one commit on the target branch.
 <br>
  
@@ -463,7 +463,7 @@ Identify the files with conflicts, resolve them, then mark the files as resolved
 git add <file>
 git commit -m "Resolved merge conflicts"
 ```
-## Pushing Changes
+# Pushing Changes
 After making changes locally, you need to push them to the remote repository to share them with others.
 <br>
  
@@ -500,7 +500,7 @@ $ git push -u origin feature-branch
 ```
 This command sets origin/feature-branch as the default upstream branch.
 
-## Pulling Changes
+# Pulling Changes
 To update your local repository with the latest changes from the remote repository, use the git pull command:
 <br>
  
