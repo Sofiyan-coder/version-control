@@ -366,7 +366,13 @@ Git allows you to combine the changes from different branches using various type
 ## I.Fast-Forward Merge
 If there are no diverging changes between branches, Git will simply move the branch pointer forward.
 <br>
-![ff merge](image-2.png)
+
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3c0c763d-0fd1-4b9b-b807-3d5105bd2803" width="200" heigth="200">
+</p>
+
+
 <br>
  
  
@@ -394,7 +400,11 @@ to avoid Fast-forward merege:
 ```ruby
 git merge --on-ff <branch-name>
 ```
-![no ff merge](image-3.png)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4804d441-69d4-48e0-962b-b8bcd30a0934" width="200" heigth="200">
+</p>
+
 
 ## II.3-Way Merge
 If the branches have diverged, Git performs a 3-way merge, creating a merge commit.
