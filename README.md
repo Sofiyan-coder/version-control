@@ -360,6 +360,63 @@ Example:<br>
 $ git remote remove origin
 ```
 
+
+# Pulling Changes
+To update your local repository with the latest changes from the remote repository, use the git pull command:
+<br>
+ 
+ 
+
+```ruby
+git pull <remote> <branch-name>
+```
+Example:<br>
+
+ 
+ 
+
+```ruby
+$ git pull origin main
+```
+This command fetches the changes from the remote main branch and merges them into your current branch.
+
+# Pushing Changes
+After making changes locally, you need to push them to the remote repository to share them with others.
+<br>
+ 
+ 
+
+```ruby
+git push <remote> <branch-name>
+```
+Example:<br>
+
+ 
+ 
+
+```ruby
+$ git push origin main
+```
+This command pushes the local main branch to the origin remote repository.
+<br>
+If this is your first push to a remote branch:
+<br>
+ 
+ 
+
+```ruby
+git push -u origin <branch-name>
+```
+Example:<br>
+
+ 
+ 
+
+```ruby
+$ git push -u origin feature-branch
+```
+This command sets origin/feature-branch as the default upstream branch.
+
 # Merging Branches
 Git allows you to combine the changes from different branches using various types of merges. Before merging, ensure you are on the branch you want to merge into.
 <br>
@@ -464,58 +521,6 @@ Identify the files with conflicts, resolve them, then mark the files as resolved
 git add <file>
 git commit -m "Resolved merge conflicts"
 ```
-# Pushing Changes
-After making changes locally, you need to push them to the remote repository to share them with others.
-<br>
- 
- 
 
-```ruby
-git push <remote> <branch-name>
-```
-Example:<br>
 
- 
- 
 
-```ruby
-$ git push origin main
-```
-This command pushes the local main branch to the origin remote repository.
-<br>
-If this is your first push to a remote branch:
-<br>
- 
- 
-
-```ruby
-git push -u origin <branch-name>
-```
-Example:<br>
-
- 
- 
-
-```ruby
-$ git push -u origin feature-branch
-```
-This command sets origin/feature-branch as the default upstream branch.
-
-# Pulling Changes
-To update your local repository with the latest changes from the remote repository, use the git pull command:
-<br>
- 
- 
-
-```ruby
-git pull <remote> <branch-name>
-```
-Example:<br>
-
- 
- 
-
-```ruby
-$ git pull origin main
-```
-This command fetches the changes from the remote main branch and merges them into your current branch.
