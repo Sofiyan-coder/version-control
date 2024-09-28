@@ -1,4 +1,4 @@
-# Git Basics
+# Git Basics Commads
 This guide provides a quick reference for common Git commands, which are useful for version control in software development.
 
 ## Git Initialization
@@ -284,14 +284,15 @@ index e69de29..d95f3ad 100644
 # Working with Remote Repos
 
 Cloning a Repository
+<br>
 Cloning a repository creates a local copy of a remote repository on your machine.
 
  
- 
+ ```ruby
 git clone <repository-url>
+```
 Example:<br>
 
- 
  
 
 ```ruby
@@ -301,8 +302,8 @@ $ git clone https://github.com/username/repository.git
 This command will download the entire project from the remote repository and create a local working directory.
 <br>
 
-## Managing Remote Repositories
-### Adding a Remote
+# Managing Remote Repositories
+## Adding a Remote
 To link your local repository to a remote repository:
 <br>
  
