@@ -264,6 +264,7 @@ Example:
 <br>
 bash<br>
 Copy code
+
 ```ruby
 $ git show 1d2a4d
 commit 1d2a4d (HEAD -> main)
@@ -279,3 +280,231 @@ index e69de29..d95f3ad 100644
 @@ -0,0 +1,3 @@
 +New content added to the file
 ```
+
+# Working with Remote Repos
+
+Cloning a Repository
+Cloning a repository creates a local copy of a remote repository on your machine.
+
+bash<br>
+Copy code
+git clone <repository-url>
+Example:<br>
+
+bash<br>
+Copy code
+
+```ruby
+$ git clone https://github.com/username/repository.git
+```
+
+This command will download the entire project from the remote repository and create a local working directory.
+<br>
+
+## Managing Remote Repositories
+### Adding a Remote
+To link your local repository to a remote repository:
+<br>
+bash<br>
+Copy code
+
+```ruby
+git remote add <name> <remote-url>
+```
+
+Example:<br>
+
+bash<br>
+Copy code
+
+```ruby
+$ git remote add origin https://github.com/username/repository.git
+```
+### Viewing Remote Repositories
+To list all remote repositories linked to your local repository:
+<br>
+bash<br>
+Copy code
+
+```ruby
+git remote -v
+```
+Example:<br>
+
+bash<br>
+Copy code
+
+```ruby
+$ git remote -v
+origin  https://github.com/username/repository.git (fetch)
+origin  https://github.com/username/repository.git (push)
+```
+
+### Removing a Remote
+To remove a remote:
+<br>
+bash<br>
+Copy code
+
+```ruby
+git remote remove <name>
+```
+
+Example:<br>
+
+bash<br>
+Copy code
+
+```ruby
+$ git remote remove origin
+```
+
+# Merging Branches
+Git allows you to combine the changes from different branches using various types of merges. Before merging, ensure you are on the branch you want to merge into.
+<br>
+
+## I.Fast-Forward Merge
+If there are no diverging changes between branches, Git will simply move the branch pointer forward.
+<br>
+![ff merge](image-2.png)
+<br>
+bash<br>
+Copy code
+
+```ruby
+git merge <branch-name>
+```
+Example:<br>
+
+bash<br>
+Copy code
+
+```ruby
+$ git checkout main
+$ git merge feature-branch
+```
+If the feature-branch has all the commits ahead of main, Git performs a fast-forward merge.
+<br>
+
+to avoid Fast-forward merege:
+<br>
+bash<br>
+Copy code
+
+```ruby
+git merge --on-ff <branch-name>
+```
+![no ff merge](image-3.png)
+
+## II.3-Way Merge
+If the branches have diverged, Git performs a 3-way merge, creating a merge commit.
+<br>
+bash<br>
+Copy code
+
+```ruby
+git merge <branch-name>
+```
+Example:<br>
+
+bash<br>
+Copy code
+
+```ruby
+$ git checkout main
+$ git merge feature-branch
+```
+Git will create a new merge commit combining changes from both branches.
+
+## III.Squash Merge
+Squashing combines all commits from the feature branch into one commit on the target branch.
+<br>
+bash<br>
+Copy code
+
+```ruby
+git merge --squash <branch-name>
+```
+Example:<br>
+
+bash<br>
+Copy code
+
+```ruby
+$ git checkout main
+$ git merge --squash feature-branch
+$ git commit -m "Merged feature-branch as a single commit"
+```
+## Conflict Resolution
+If Git encounters conflicts during a merge, it will pause and mark the conflicting areas in the files. You need to manually resolve the conflicts and complete the merge.
+<br>
+bash<br>
+Copy code
+
+```ruby
+git status
+```
+Identify the files with conflicts, resolve them, then mark the files as resolved:
+<br>
+bash<br>
+Copy code
+
+```ruby
+git add <file>
+git commit -m "Resolved merge conflicts"
+```
+## Pushing Changes
+After making changes locally, you need to push them to the remote repository to share them with others.
+<br>
+bash<br>
+Copy code
+
+```ruby
+git push <remote> <branch-name>
+```
+Example:<br>
+
+bash<br>
+Copy code
+
+```ruby
+$ git push origin main
+```
+This command pushes the local main branch to the origin remote repository.
+<br>
+If this is your first push to a remote branch:
+<br>
+bash<br>
+Copy code
+
+```ruby
+git push -u origin <branch-name>
+```
+Example:<br>
+
+bash<br>
+Copy code
+
+```ruby
+$ git push -u origin feature-branch
+```
+This command sets origin/feature-branch as the default upstream branch.
+
+## Pulling Changes
+To update your local repository with the latest changes from the remote repository, use the git pull command:
+<br>
+bash<br>
+Copy code
+
+```ruby
+git pull <remote> <branch-name>
+```
+Example:<br>
+
+bash<br>
+Copy code
+
+```ruby
+$ git pull origin main
+```
+This command fetches the changes from the remote main branch and merges them into your current branch.
